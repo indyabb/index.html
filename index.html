@@ -3,173 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indya Regan | IT & Cybersecurity Portfolio</title>
+  <title>Indya Regan | IT Support & Cybersecurity Portfolio</title>
+  
+  <!-- Modern Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-color: #f1f5f9;         /* Cool light slate background */
-      --card-bg: #ffffff;          /* Clean white card surface */
-      --text-main: #334155;        /* Deep charcoal body text */
-      --heading-color: #0f172a;   /* Dark navy/slate headings */
-      --accent-cool: #64748b;      /* Muted cool blue-gray */
-      --accent-subtle: #818cf8;    /* Soft lavender/periwinkle highlight */
-      --border-color: #e2e8f0;    /* Delicate border gray */
+      /* Color Palette: Cool-toned, professional, feminine accent */
+      --bg-dark: #0d1117;          /* Obsidian Navy */
+      --card-bg: #161b22;          /* Slate Glass Card */
+      --card-border: #2d3748;      /* Cool Grey Border */
+      
+      --accent-lavender: #c084fc;  /* Primary Girly Accent - Bright Lavender */
+      --accent-lilac: #e9d5ff;     /* Soft Lilac Glow */
+      --accent-teal: #38bdf8;      /* Electric Cyan/Blue Accent */
+      --accent-mint: #34d399;      /* Fresh Mint Accent */
+      
+      --text-primary: #f8fafc;     /* Clean White Text */
+      --text-secondary: #94a3b8;   /* Muted Slate Text */
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: var(--bg-color);
-      color: var(--text-main);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
       line-height: 1.6;
       padding: 40px 20px;
     }
 
-    .container {
-      max-width: 960px;
-      margin: auto;
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* HEADER */
+    /* HEADER / HERO BANNER */
     header {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 35px 30px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-      border: 1px solid var(--border-color);
-      margin-bottom: 25px;
+      background: linear-gradient(135deg, rgba(192, 132, 252, 0.15) 0%, rgba(56, 189, 248, 0.08) 100%);
+      border: 1px solid var(--card-border);
+      padding: 40px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      color: var(--heading-color);
+    .header-info h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ffffff, var(--accent-lilac));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
-      margin-bottom: 6px;
     }
 
-    .tagline {
+    .header-info p {
+      color: var(--accent-lavender);
       font-size: 1.1rem;
-      color: var(--accent-cool);
       font-weight: 500;
+      margin-top: 5px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    /* GRID LAYOUT */
-    .grid-container {
+    .header-badge {
+      background: rgba(192, 132, 252, 0.1);
+      border: 1px solid var(--accent-lavender);
+      padding: 12px 20px;
+      border-radius: 50px;
+      color: var(--accent-lilac);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-badge::before {
+      content: "•";
+      color: var(--accent-mint);
+      font-size: 1.5rem;
+      line-height: 0;
+    }
+
+    /* MAIN GRID LAYOUT */
+    .dashboard-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 25px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
     }
 
-    @media (max-width: 768px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
-    /* CARDS */
+    /* CARD STYLING */
     .card {
       background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    h2 {
-      color: var(--heading-color);
-      font-size: 1.35rem;
-      margin-bottom: 15px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--accent-subtle);
+    .card:hover {
+      border-color: var(--accent-lavender);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(192, 132, 252, 0.1);
     }
 
-    h3 {
-      font-size: 1rem;
-      color: var(--heading-color);
-      margin-bottom: 8px;
+    .card h2 {
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    ul {
-      padding-left: 20px;
+    .card h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-lavender);
+      border-radius: 2px;
     }
 
-    li {
-      margin-bottom: 8px;
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
     }
 
-    /* TECHNICAL SKILLS BADGES / GRID */
+    /* SKILLS GRID (Nested Inside Card) */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
+      gap: 16px;
     }
 
-    .skill-block {
-      background: #f8fafc;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #edf2f7;
+    .skill-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 16px;
+      transition: background 0.3s;
     }
 
-    .skill-block ul {
-      padding-left: 18px;
+    .skill-box:hover {
+      background: rgba(192, 132, 252, 0.05);
+      border-color: rgba(192, 132, 252, 0.2);
+    }
+
+    .skill-box h3 {
       font-size: 0.95rem;
+      color: var(--accent-teal);
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      color: var(--accent-cool);
+    .skill-box ul {
+      list-style: none;
+    }
+
+    .skill-box li {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .skill-box li::before {
+      content: "›";
+      color: var(--accent-lavender);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* TIMELINE STYLING (For Experience & Education) */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-lavender);
+      box-shadow: 0 0 8px var(--accent-lavender);
+    }
+
+    .timeline-item h3 {
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-item .subtext {
+      color: var(--accent-mint);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item p {
       font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* RESPONSIVE DESIGN FOR MOBILE */
+    @media (max-width: 850px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-
-    <!-- HEADER -->
+  <div class="wrapper">
+    
+    <!-- Top Header Banner -->
     <header>
-      <h1>Indya Regan</h1>
-      <p class="tagline">Aspiring IT Support | Help Desk | Cybersecurity Professional</p>
+      <div class="header-info">
+        <h1>Indya Regan</h1>
+        <p>IT Support | Help Desk | Cybersecurity Professional</p>
+      </div>
+      <div class="header-badge">
+        Open to Opportunities
+      </div>
     </header>
 
-    <!-- MAIN TWO-COLUMN LAYOUT -->
-    <div class="grid-container">
+    <!-- Advanced Two-Column Grid Layout -->
+    <div class="dashboard-grid">
 
       <!-- LEFT COLUMN -->
-      <main class="left-col">
-
+      <div class="column">
+        
+        <!-- About Me Card -->
         <section class="card">
           <h2>About Me</h2>
           <p>
-            I'm an aspiring IT and Cybersecurity professional with a strong background in
-            healthcare administration and customer service. I completed the QuickStart
-            Cybersecurity Bootcamp and am currently enrolled in the Per Scholas CompTIA A+
-            Training Program, where I'm developing hands-on experience with computer
-            hardware, operating systems, networking, troubleshooting, and cybersecurity
-            fundamentals.
-          </p>
-          <p style="margin-top: 12px;">
-            I enjoy solving technical problems, learning new technologies, and continuously
-            building my skills. My goal is to begin my career in IT support or Help Desk,
-            gain real-world experience, and grow into cybersecurity.
+            I'm an aspiring IT and Cybersecurity professional with a strong foundation in healthcare administration and customer service. I completed the <strong>QuickStart Cybersecurity Bootcamp</strong> and am currently enrolled in the <strong>Per Scholas CompTIA A+ Training Program</strong>.
+            <br><br>
+            I develop hands-on experience with computer hardware, operating systems, networking, troubleshooting, and cybersecurity fundamentals. My goal is to leverage my analytical skills and passion for technology in an entry-level IT Support or Help Desk role, continuously growing into cybersecurity.
           </p>
         </section>
 
+        <!-- Technical Skills Grid Card -->
         <section class="card">
           <h2>Technical Skills</h2>
           <div class="skills-grid">
-
-            <div class="skill-block">
+            
+            <div class="skill-box">
               <h3>Operating Systems</h3>
               <ul>
                 <li>Windows 10/11</li>
@@ -177,89 +308,98 @@
               </ul>
             </div>
 
-            <div class="skill-block">
+            <div class="skill-box">
               <h3>Networking</h3>
               <ul>
-                <li>TCP/IP</li>
+                <li>TCP/IP & Subnetting</li>
                 <li>DNS & DHCP</li>
-                <li>Subnetting</li>
                 <li>Troubleshooting</li>
               </ul>
             </div>
 
-            <div class="skill-block">
+            <div class="skill-box">
               <h3>Cybersecurity</h3>
               <ul>
-                <li>Fundamentals</li>
+                <li>Security Fundamentals</li>
                 <li>Risk Management</li>
-                <li>Vulnerability Assessment</li>
-                <li>Threat Awareness</li>
+                <li>Vulnerabilities</li>
               </ul>
             </div>
 
-            <div class="skill-block">
+            <div class="skill-box">
               <h3>Tools</h3>
               <ul>
                 <li>Wireshark</li>
-                <li>VirtualBox</li>
-                <li>Kali Linux</li>
+                <li>VirtualBox & Kali</li>
                 <li>Git & GitHub</li>
               </ul>
             </div>
 
-            <div class="skill-block">
+            <div class="skill-box">
               <h3>Hardware</h3>
               <ul>
                 <li>PC Assembly</li>
-                <li>Installation</li>
-                <li>Peripheral Setup</li>
-                <li>Troubleshooting</li>
+                <li>Peripherals</li>
+                <li>System Repair</li>
               </ul>
             </div>
 
           </div>
         </section>
 
-      </main>
+      </div>
 
-      <!-- RIGHT COLUMN (SIDEBAR) -->
-      <aside class="right-col">
-
+      <!-- RIGHT COLUMN -->
+      <div class="column">
+        
+        <!-- Career Objective -->
         <section class="card">
           <h2>Career Objective</h2>
           <p>
-            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I
-            can apply my technical training, customer service experience, and passion for
-            technology while continuing to grow professionally.
+            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer service experience, and problem-solving passion while continuing to expand my expertise.
           </p>
         </section>
 
+        <!-- Education Timeline Card -->
         <section class="card">
           <h2>Education & Training</h2>
-          <ul>
-            <li><strong>Per Scholas</strong><br>CompTIA A+ Training Program (Current)</li>
-            <li style="margin-top: 10px;"><strong>QuickStart</strong><br>Cybersecurity Bootcamp</li>
-          </ul>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>CompTIA A+ Training Program</h3>
+              <div class="subtext">Per Scholas • Enrolled / Current</div>
+              <p>Hands-on hardware, OS installation, network architecture, and user support training.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Cybersecurity Bootcamp</h3>
+              <div class="subtext">QuickStart • Completed</div>
+              <p>Core security concepts, threat analysis, risk mitigation, and defensive techniques.</p>
+            </div>
+          </div>
         </section>
 
+        <!-- Professional Experience Timeline Card -->
         <section class="card">
-          <h2>Professional Experience</h2>
-          <ul>
-            <li>Healthcare Administration</li>
-            <li>Patient Support & Customer Service</li>
-            <li>Documentation & HIPAA Compliance</li>
-            <li>Administrative Operations</li>
-            <li>Technology Support (IMetric)</li>
-          </ul>
+          <h2>Professional Background</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Technology Support Experience</h3>
+              <div class="subtext">IMetric</div>
+              <p>Provided technical assistance and administrative operations support.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Healthcare Administration</h3>
+              <div class="subtext">Patient Support & Operations</div>
+              <p>Managed patient support, records, HIPAA compliance, and client communications.</p>
+            </div>
+          </div>
         </section>
 
-      </aside>
+      </div>
 
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>© 2026 Indya Regan</p>
+    <footer>
+      <p>© 2026 Indya Regan • Built for GitHub Pages</p>
     </footer>
 
   </div>
