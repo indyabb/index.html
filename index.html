@@ -11,20 +11,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Warm, Chic & Professional Color Palette */
+    /* Vibrant Pink Palette with Purple Accents */
     :root {
-      --bg-base: #0f0c13;          /* Obsidian Mulberry Base */
-      --card-bg: #191421;          /* Glass Velvet Card */
-      --card-border: #2e243a;      /* Soft Violet Border */
+      --bg-base: #130a17;          /* Dark Mulberry/Deep Plum Base */
+      --card-bg: #1f1224;          /* Rich Violet Card Background */
+      --card-border: #3b1d47;      /* Subtle Purple Card Border */
       
-      --accent-rose: #f472b6;      /* Bright Rose Gold Accent */
-      --accent-mauve: #c084fc;     /* Soft Lavender Glow */
-      --accent-amber: #fbbf24;     /* Warm Amber Accent */
-      --accent-blush: #fbcfe8;     /* Warm Blush Text Highlight */
+      --accent-magenta: #ec4899;   /* Bright Hot Pink Accent */
+      --accent-rose: #f472b6;      /* Vibrant Rose Pink */
+      --accent-blush: #fbcfe8;     /* Soft Light Pink Highlight */
+      --accent-purple: #a855f7;    /* Subtle Electric Violet Accent */
       
-      --text-main: #f8fafc;        /* High-contrast Crisp Text */
-      --text-sub: #a195b0;         /* Soft Muted Lavender Text */
-      --badge-bg: rgba(244, 114, 182, 0.08);
+      --text-main: #ffffff;        /* High-contrast Crisp Text */
+      --text-sub: #d8b4fe;         /* Soft Light Lavender/Purple Text */
+      --badge-bg: rgba(236, 72, 153, 0.12);
     }
 
     * {
@@ -52,7 +52,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 28px;
-      background: rgba(25, 20, 33, 0.85);
+      background: rgba(31, 18, 36, 0.85);
       backdrop-filter: blur(12px);
       border: 1px solid var(--card-border);
       border-radius: 100px;
@@ -66,7 +66,7 @@
     }
 
     .nav-logo span {
-      color: var(--accent-rose);
+      color: var(--accent-magenta);
     }
 
     .nav-links {
@@ -89,12 +89,12 @@
 
     /* HERO BANNER */
     .hero-banner {
-      background: linear-gradient(135deg, rgba(244, 114, 182, 0.12) 0%, rgba(192, 132, 252, 0.08) 50%, rgba(251, 191, 36, 0.04) 100%);
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(244, 114, 182, 0.08) 100%);
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 48px;
       margin-bottom: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
 
     .status-pill {
@@ -102,7 +102,7 @@
       align-items: center;
       gap: 8px;
       background: var(--badge-bg);
-      border: 1px solid rgba(244, 114, 182, 0.3);
+      border: 1px solid rgba(236, 72, 153, 0.35);
       padding: 6px 16px;
       border-radius: 50px;
       color: var(--accent-blush);
@@ -115,9 +115,9 @@
       content: "";
       width: 8px;
       height: 8px;
-      background: var(--accent-amber);
+      background: var(--accent-rose);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-amber);
+      box-shadow: 0 0 10px var(--accent-rose);
     }
 
     .hero-title {
@@ -125,13 +125,13 @@
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 8px;
-      background: linear-gradient(90deg, #ffffff, var(--accent-blush));
+      background: linear-gradient(90deg, #ffffff, var(--accent-rose), var(--accent-blush));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      color: var(--accent-rose);
+      color: var(--accent-magenta);
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -153,8 +153,8 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent-rose), var(--accent-mauve));
-      color: #0f0c13;
+      background: linear-gradient(135deg, var(--accent-magenta), var(--accent-rose));
+      color: #ffffff;
       padding: 12px 28px;
       border-radius: 50px;
       font-weight: 700;
@@ -165,7 +165,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3);
+      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
     }
 
     .btn-secondary {
@@ -177,6 +177,11 @@
       font-weight: 600;
       font-size: 0.92rem;
       text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-rose);
     }
 
     /* KEY HIGHLIGHT STATS */
@@ -198,7 +203,7 @@
     .stat-number {
       font-size: 1.6rem;
       font-weight: 800;
-      color: var(--accent-amber);
+      color: var(--accent-rose);
     }
 
     .stat-label {
@@ -225,7 +230,7 @@
     }
 
     .section-card:hover {
-      border-color: rgba(244, 114, 182, 0.4);
+      border-color: rgba(236, 72, 153, 0.5);
       transform: translateY(-3px);
     }
 
@@ -242,7 +247,7 @@
       content: "";
       width: 4px;
       height: 20px;
-      background: linear-gradient(180deg, var(--accent-rose), var(--accent-amber));
+      background: linear-gradient(180deg, var(--accent-magenta), var(--accent-purple));
       border-radius: 4px;
     }
 
@@ -257,7 +262,7 @@
       font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: var(--accent-amber);
+      color: var(--accent-rose);
       margin-bottom: 10px;
       font-weight: 700;
     }
@@ -270,7 +275,7 @@
 
     .pill {
       background: var(--badge-bg);
-      border: 1px solid rgba(244, 114, 182, 0.2);
+      border: 1px solid rgba(236, 72, 153, 0.25);
       color: var(--accent-blush);
       padding: 6px 14px;
       border-radius: 8px;
@@ -300,8 +305,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--accent-rose);
-      box-shadow: 0 0 10px var(--accent-rose);
+      background: var(--accent-magenta);
+      box-shadow: 0 0 10px var(--accent-magenta);
     }
 
     .node-title {
@@ -312,7 +317,7 @@
 
     .node-meta {
       font-size: 0.85rem;
-      color: var(--accent-amber);
+      color: var(--accent-rose);
       font-weight: 600;
       margin-bottom: 6px;
     }
