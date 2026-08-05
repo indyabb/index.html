@@ -12,19 +12,18 @@
 
   <style>
     :root {
-      /* Palette: Elegant Warm Mauve, Soft Rose & Warm Gold Accents */
-      --bg-dark: #120f17;          /* Deep Plum Obsidian */
-      --card-bg: #1d1826;          /* Dark Warm Velvet Card */
-      --card-border: #332840;      /* Soft Mulberry Border */
+      /* Warm Palette: Deep Plum, Warm Rose & Amber Gold */
+      --bg-dark: #1a1e29;          /* Dark Obsidian Slate */
+      --card-bg: #222836;          /* Deep Card Background */
+      --card-border: #353f54;      /* Subtitle Border */
       
-      --accent-rose: #f472b6;      /* Vibrant Warm Rose */
-      --accent-mauve: #e879f9;     /* Soft Bright Magenta */
-      --accent-gold: #fbbf24;      /* Warm Amber/Gold Highlight */
-      --accent-blush: #fbcfe8;     /* Warm Blush Glow */
+      --accent-rose: #d97706;      /* Warm Amber/Copper Highlight */
+      --accent-mauve: #e879f9;     /* Soft Rose Accent */
+      --accent-gold: #f59e0b;      /* Warm Gold Accent */
+      --accent-blush: #fde68a;     /* Warm Cream Tint */
       
-      --text-primary: #fcf7fa;     /* Warm White Text */
-      --text-secondary: #a79bb5;   /* Soft Warm Slate */
-      --tag-bg: rgba(244, 114, 182, 0.08);
+      --text-primary: #f8fafc;     /* Primary Text */
+      --text-secondary: #94a3b8;   /* Muted Slate Text */
     }
 
     * {
@@ -38,7 +37,7 @@
       background-color: var(--bg-dark);
       color: var(--text-primary);
       line-height: 1.6;
-      padding: 40px 20px;
+      padding: 30px;
     }
 
     .wrapper {
@@ -46,235 +45,161 @@
       margin: 0 auto;
     }
 
-    /* HEADER / HERO BANNER */
+    /* TOP HEADER BANNER */
     header {
-      background: linear-gradient(135deg, rgba(244, 114, 182, 0.12) 0%, rgba(232, 121, 249, 0.08) 50%, rgba(251, 191, 36, 0.05) 100%);
-      border: 1px solid var(--card-border);
-      padding: 40px 50px;
-      border-radius: 20px;
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 25px 35px;
+      margin-bottom: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 28px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(244, 114, 182, 0.15) 0%, transparent 70%);
-      pointer-events: none;
+      color: #0f172a;
     }
 
     .header-info h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      background: linear-gradient(90deg, #ffffff, var(--accent-blush));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
+      color: #1e293b;
     }
 
     .header-info p {
-      color: var(--accent-rose);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 6px;
-      letter-spacing: 0.8px;
+      color: #64748b;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      margin-top: 4px;
     }
 
-    .header-badge {
-      background: rgba(244, 114, 182, 0.1);
-      border: 1px solid rgba(244, 114, 182, 0.3);
-      padding: 12px 22px;
-      border-radius: 50px;
-      color: var(--accent-blush);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 15px rgba(244, 114, 182, 0.1);
-    }
-
-    .header-badge::before {
-      content: "•";
-      color: var(--accent-gold);
-      font-size: 1.8rem;
-      line-height: 0;
-    }
-
-    /* MAIN GRID LAYOUT */
+    /* 3-COLUMN DASHBOARD GRID */
     .dashboard-grid {
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 28px;
-    }
-
-    .column {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
+      grid-template-columns: 1fr 1fr 0.8fr;
+      gap: 20px;
     }
 
     /* CARD STYLING */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 32px;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-    }
-
-    .card:hover {
-      border-color: rgba(244, 114, 182, 0.5);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(244, 114, 182, 0.12);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
     }
 
     .card h2 {
-      font-size: 1.35rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 22px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .card h2::before {
-      content: "";
-      display: inline-block;
-      width: 5px;
-      height: 20px;
-      background: linear-gradient(180deg, var(--accent-rose), var(--accent-gold));
-      border-radius: 4px;
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    /* SKILLS DETAILED GRID */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-    }
-
-    .skill-box {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 14px;
-      padding: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .skill-box:hover {
-      background: var(--tag-bg);
-      border-color: rgba(244, 114, 182, 0.3);
-    }
-
-    .skill-box h3 {
-      font-size: 0.95rem;
-      color: var(--accent-gold);
-      margin-bottom: 12px;
-      font-weight: 700;
+      margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+      padding-bottom: 6px;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .inner-card {
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 10px;
     }
 
-    .tag {
-      background: rgba(244, 114, 182, 0.1);
-      border: 1px solid rgba(244, 114, 182, 0.2);
-      color: var(--accent-blush);
+    .inner-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .inner-card p {
+      color: #334155;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* TECHNICAL SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .skill-card {
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .skill-card h4 {
+      font-size: 0.95rem;
+      margin-top: 8px;
+      color: #0f172a;
+    }
+
+    .skill-card ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+    }
+
+    .skill-card li {
       font-size: 0.82rem;
-      font-weight: 500;
-      padding: 5px 10px;
-      border-radius: 8px;
+      color: #475569;
+      margin-bottom: 4px;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .skill-card li::before {
+      content: "•";
+      color: var(--accent-rose);
+      position: absolute;
+      left: 0;
     }
 
     /* TIMELINE STYLING */
     .timeline {
       display: flex;
       flex-direction: column;
-      gap: 22px;
-      padding-left: 5px;
+      gap: 12px;
     }
 
     .timeline-item {
+      background: #f8fafc;
+      color: #0f172a;
+      border-radius: 10px;
+      padding: 14px 18px;
       position: relative;
-      padding-left: 28px;
-      border-left: 2px solid var(--card-border);
     }
 
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -7px;
-      top: 6px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--accent-rose);
-      box-shadow: 0 0 12px var(--accent-rose);
+    .timeline-item h4 {
+      font-size: 0.95rem;
+      color: #0f172a;
     }
 
-    .timeline-item h3 {
-      font-size: 1.05rem;
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .timeline-item .subtext {
-      color: var(--accent-gold);
-      font-size: 0.88rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .timeline-item p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
+    .timeline-item .date {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 2px;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      margin-top: 50px;
-      padding: 24px;
+      margin-top: 30px;
       color: var(--text-secondary);
-      font-size: 0.88rem;
-      border-top: 1px solid var(--card-border);
+      font-size: 0.85rem;
     }
 
-    /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
       .dashboard-grid {
         grid-template-columns: 1fr;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 30px;
       }
     }
   </style>
@@ -283,141 +208,129 @@
 
   <div class="wrapper">
     
-    <!-- Top Header Banner -->
+    <!-- Header Banner -->
     <header>
       <div class="header-info">
         <h1>Indya Regan</h1>
-        <p>IT Support | Help Desk | Cybersecurity Professional</p>
-      </div>
-      <div class="header-badge">
-        Open to Opportunities
+        <p>IT Support & Cybersecurity Professional</p>
       </div>
     </header>
 
-    <!-- Two-Column Grid Layout -->
+    <!-- Main Grid -->
     <div class="dashboard-grid">
 
-      <!-- LEFT COLUMN -->
-      <div class="column">
-        
-        <!-- About Me Card -->
+      <!-- Column 1: About & Objective -->
+      <div>
         <section class="card">
           <h2>About Me</h2>
-          <p>
-            I'm an aspiring IT and Cybersecurity professional with a strong foundation in healthcare administration and customer service. I completed the <strong>QuickStart Cybersecurity Bootcamp</strong> and am currently enrolled in the <strong>Per Scholas CompTIA A+ Training Program</strong>.
-            <br><br>
-            I develop hands-on experience with computer hardware, operating systems, networking, troubleshooting, and cybersecurity fundamentals. My goal is to leverage my analytical skills and passion for technology in an entry-level IT Support or Help Desk role, continuously growing into cybersecurity.
-          </p>
+          <div class="inner-card">
+            <h3>About Me</h3>
+            <p>
+              I'm an aspiring IT and Cybersecurity professional with a strong background in healthcare administration and customer service. I completed the QuickStart Cybersecurity Bootcamp and am currently enrolled in the Per Scholas CompTIA A+ Training Program.
+            </p>
+            <p style="margin-top: 12px;">
+              I enjoy solving technical problems, learning new technologies, and building real-world experience to grow into cybersecurity.
+            </p>
+          </div>
         </section>
 
-        <!-- Technical Skills Grid Card -->
+        <section class="card">
+          <h2>Career Objective</h2>
+          <div class="inner-card">
+            <p>
+              Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer service experience, and passion for technology while continuing to grow professionally.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Column 2: Technical Skills -->
+      <div>
         <section class="card">
           <h2>Technical Skills</h2>
           <div class="skills-grid">
             
-            <div class="skill-box">
-              <h3>Operating Systems</h3>
-              <div class="skill-tags">
-                <span class="tag">Windows 10/11</span>
-                <span class="tag">Basic Linux</span>
-              </div>
+            <div class="skill-card">
+              <h4>Operating Systems</h4>
+              <ul>
+                <li>Windows 10/11</li>
+                <li>Basic Linux</li>
+              </ul>
             </div>
 
-            <div class="skill-box">
-              <h3>Networking</h3>
-              <div class="skill-tags">
-                <span class="tag">TCP/IP</span>
-                <span class="tag">DNS & DHCP</span>
-                <span class="tag">Subnetting</span>
-                <span class="tag">Troubleshooting</span>
-              </div>
+            <div class="skill-card">
+              <h4>Networking</h4>
+              <ul>
+                <li>TCP/IP & Subnetting</li>
+                <li>DNS & DHCP</li>
+                <li>Troubleshooting</li>
+              </ul>
             </div>
 
-            <div class="skill-box">
-              <h3>Cybersecurity</h3>
-              <div class="skill-tags">
-                <span class="tag">Security Fundamentals</span>
-                <span class="tag">Risk Management</span>
-                <span class="tag">Vulnerabilities</span>
-                <span class="tag">Threat Awareness</span>
-              </div>
+            <div class="skill-card">
+              <h4>Cybersecurity</h4>
+              <ul>
+                <li>Security Fundamentals</li>
+                <li>Risk Management</li>
+                <li>Vulnerability Assessment</li>
+              </ul>
             </div>
 
-            <div class="skill-box">
-              <h3>Tools</h3>
-              <div class="skill-tags">
-                <span class="tag">Wireshark</span>
-                <span class="tag">VirtualBox</span>
-                <span class="tag">Kali Linux</span>
-                <span class="tag">Git & GitHub</span>
-              </div>
+            <div class="skill-card">
+              <h4>Tools</h4>
+              <ul>
+                <li>Wireshark</li>
+                <li>VirtualBox & Kali</li>
+                <li>Git & GitHub</li>
+              </ul>
             </div>
 
-            <div class="skill-box">
-              <h3>Hardware</h3>
-              <div class="skill-tags">
-                <span class="tag">PC Assembly</span>
-                <span class="tag">Peripherals</span>
-                <span class="tag">Hardware Repair</span>
-              </div>
+            <div class="skill-card" style="grid-column: span 2;">
+              <h4>Hardware</h4>
+              <ul>
+                <li>PC Assembly & Peripheral Setup</li>
+                <li>Hardware Installation & Repair</li>
+              </ul>
             </div>
 
           </div>
         </section>
-
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="column">
-        
-        <!-- Career Objective -->
+      <!-- Column 3: Professional Experience Timeline -->
+      <div>
         <section class="card">
-          <h2>Career Objective</h2>
-          <p>
-            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer service experience, and problem-solving passion while continuing to expand my expertise.
-          </p>
-        </section>
-
-        <!-- Education Timeline Card -->
-        <section class="card">
-          <h2>Education & Training</h2>
+          <h2>Experience & Education</h2>
           <div class="timeline">
+            
             <div class="timeline-item">
-              <h3>CompTIA A+ Training Program</h3>
-              <div class="subtext">Per Scholas • Enrolled / Current</div>
-              <p>Hands-on hardware, OS installation, network architecture, and user support training.</p>
+              <h4>Per Scholas</h4>
+              <div class="date">CompTIA A+ • Current</div>
             </div>
+
             <div class="timeline-item">
-              <h3>Cybersecurity Bootcamp</h3>
-              <div class="subtext">QuickStart • Completed</div>
-              <p>Core security concepts, threat analysis, risk mitigation, and defensive techniques.</p>
+              <h4>QuickStart Bootcamp</h4>
+              <div class="date">Cybersecurity • Completed</div>
             </div>
+
+            <div class="timeline-item">
+              <h4>Healthcare Administration</h4>
+              <div class="date">Patient Support & Operations</div>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Technology Support</h4>
+              <div class="date">IMetric</div>
+            </div>
+
           </div>
         </section>
-
-        <!-- Professional Experience Timeline Card -->
-        <section class="card">
-          <h2>Professional Background</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>Technology Support Experience</h3>
-              <div class="subtext">IMetric</div>
-              <p>Provided technical assistance and administrative operations support.</p>
-            </div>
-            <div class="timeline-item">
-              <h3>Healthcare Administration</h3>
-              <div class="subtext">Patient Support & Operations</div>
-              <p>Managed patient support, documentation, HIPAA compliance, and client communications.</p>
-            </div>
-          </div>
-        </section>
-
       </div>
 
     </div>
 
     <footer>
-      <p>© 2026 Indya Regan • Built for GitHub Pages</p>
+      <p>© 2026 Indya Regan</p>
     </footer>
 
   </div>
