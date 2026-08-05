@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indya Regan | IT Support & Cybersecurity Portfolio</title>
+  <title>Indya Regan | IT Support & Cybersecurity Professional</title>
   
-  <!-- Modern Font -->
+  <!-- Premium Typography: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* CSS Variables for Warm, Feminine & Professional Palette */
     :root {
-      /* Warm Palette: Deep Plum, Warm Rose & Amber Gold */
-      --bg-dark: #1a1e29;          /* Dark Obsidian Slate */
-      --card-bg: #222836;          /* Deep Card Background */
-      --card-border: #353f54;      /* Subtitle Border */
+      --bg-base: #0f0c13;          /* Obsidian Mulberry Base */
+      --card-bg: #191421;          /* Glass Velvet Card */
+      --card-border: #2e243a;      /* Soft Violet Border */
       
-      --accent-rose: #d97706;      /* Warm Amber/Copper Highlight */
-      --accent-mauve: #e879f9;     /* Soft Rose Accent */
-      --accent-gold: #f59e0b;      /* Warm Gold Accent */
-      --accent-blush: #fde68a;     /* Warm Cream Tint */
+      --accent-rose: #f472b6;      /* Bright Rose Gold Accent */
+      --accent-mauve: #c084fc;     /* Soft Lavender/Lilac Glow */
+      --accent-amber: #fbbf24;     /* Warm Amber Accent */
+      --accent-blush: #fbcfe8;     /* Warm Blush Text Highlight */
       
-      --text-primary: #f8fafc;     /* Primary Text */
-      --text-secondary: #94a3b8;   /* Muted Slate Text */
+      --text-main: #f8fafc;        /* High-contrast Crisp Text */
+      --text-sub: #a195b0;         /* Soft Muted Lavender Text */
+      --badge-bg: rgba(244, 114, 182, 0.08);
     }
 
     * {
@@ -34,172 +35,336 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
+      background-color: var(--bg-base);
+      color: var(--text-main);
       line-height: 1.6;
-      padding: 30px;
+      padding: 40px 20px;
+      overflow-x: hidden;
     }
 
     .wrapper {
-      max-width: 1200px;
+      max-width: 1140px;
       margin: 0 auto;
     }
 
-    /* TOP HEADER BANNER */
-    header {
-      background: #f1f5f9;
-      border-radius: 12px;
-      padding: 25px 35px;
-      margin-bottom: 24px;
+    /* NAVIGATION BAR */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #0f172a;
-    }
-
-    .header-info h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #1e293b;
-    }
-
-    .header-info p {
-      color: #64748b;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* 3-COLUMN DASHBOARD GRID */
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 0.8fr;
-      gap: 20px;
-    }
-
-    /* CARD STYLING */
-    .card {
-      background: var(--card-bg);
+      padding: 16px 28px;
+      background: rgba(25, 20, 33, 0.8);
+      backdrop-filter: blur(12px);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 24px;
+      border-radius: 100px;
+      margin-bottom: 35px;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .nav-logo span {
+      color: var(--accent-rose);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-rose);
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(244, 114, 182, 0.12) 0%, rgba(192, 132, 252, 0.08) 50%, rgba(251, 191, 36, 0.04) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      color: var(--accent-blush);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .status-pill::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--accent-amber);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-amber);
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #ffffff, var(--accent-blush));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--accent-rose);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       margin-bottom: 20px;
     }
 
-    .card h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 2px solid rgba(245, 158, 11, 0.3);
-      padding-bottom: 6px;
+    .hero-bio {
+      color: var(--text-sub);
+      font-size: 1.02rem;
+      margin-bottom: 28px;
+      line-height: 1.7;
     }
 
-    .inner-card {
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 10px;
-    }
-
-    .inner-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      color: #0f172a;
-    }
-
-    .inner-card p {
-      color: #334155;
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-
-    /* TECHNICAL SKILLS GRID */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .cta-group {
+      display: flex;
       gap: 14px;
     }
 
-    .skill-card {
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 10px;
-      padding: 16px;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-rose), var(--accent-mauve));
+      color: #0f0c13;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(244, 114, 182, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--accent-rose);
+    }
+
+    /* KEY STATS BAR */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 24px;
       text-align: center;
     }
 
-    .skill-card h4 {
-      font-size: 0.95rem;
-      margin-top: 8px;
-      color: #0f172a;
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-amber);
     }
 
-    .skill-card ul {
-      list-style: none;
-      text-align: left;
-      margin-top: 10px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 8px;
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: 500;
+      margin-top: 4px;
     }
 
-    .skill-card li {
-      font-size: 0.82rem;
-      color: #475569;
-      margin-bottom: 4px;
-      padding-left: 10px;
-      position: relative;
+    /* MAIN CONTENT DASHBOARD GRID */
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 30px;
     }
 
-    .skill-card li::before {
-      content: "•";
-      color: var(--accent-rose);
-      position: absolute;
-      left: 0;
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 30px;
+      transition: border-color 0.3s, transform 0.3s;
     }
 
-    /* TIMELINE STYLING */
-    .timeline {
+    .section-card:hover {
+      border-color: rgba(244, 114, 182, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 12px;
     }
 
-    .timeline-item {
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 10px;
-      padding: 14px 18px;
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(180deg, var(--accent-rose), var(--accent-amber));
+      border-radius: 4px;
+    }
+
+    /* SKILLS CATEGORIES */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skill-category h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--accent-amber);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      background: var(--badge-bg);
+      border: 1px solid rgba(244, 114, 182, 0.2);
+      color: var(--accent-blush);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* TIMELINE COMPONENT */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-left: 6px;
+    }
+
+    .timeline-node {
       position: relative;
+      padding-left: 28px;
+      border-left: 2px solid var(--card-border);
     }
 
-    .timeline-item h4 {
-      font-size: 0.95rem;
-      color: #0f172a;
+    .timeline-node::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-rose);
+      box-shadow: 0 0 10px var(--accent-rose);
     }
 
-    .timeline-item .date {
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-top: 2px;
+    .node-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .node-meta {
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .node-desc {
+      font-size: 0.92rem;
+      color: var(--text-sub);
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      margin-top: 30px;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
+      margin-top: 40px;
+      padding: 24px;
+      color: var(--text-sub);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--card-border);
     }
 
+    /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .dashboard-grid {
+      .dashboard-layout, .stats-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero-banner {
+        padding: 32px;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 20px;
       }
     }
   </style>
@@ -207,130 +372,164 @@
 <body>
 
   <div class="wrapper">
-    
-    <!-- Header Banner -->
-    <header>
-      <div class="header-info">
-        <h1>Indya Regan</h1>
-        <p>IT Support & Cybersecurity Professional</p>
+
+    <!-- Top Navigation Bar -->
+    <nav>
+      <div class="nav-logo">Indya<span>Regan</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Header Banner -->
+    <section class="hero-banner" id="about">
+      <div class="hero-content">
+        <div class="status-pill">CompTIA A+ & Cybersecurity Specialist</div>
+        <h1 class="hero-title">Indya Regan</h1>
+        <p class="hero-subtitle">IT Support | Help Desk | Cybersecurity Professional</p>
+        <p class="hero-bio">
+          Combining extensive experience in healthcare administration and client support with rigorous cybersecurity training. Skilled in hardware diagnostics, network troubleshooting, and security risk assessment—dedicated to maintaining high system reliability and secure environments.
+        </p>
+        <div class="cta-group">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <a href="#skills" class="btn-secondary">View Qualifications</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- Main Grid -->
-    <div class="dashboard-grid">
-
-      <!-- Column 1: About & Objective -->
-      <div>
-        <section class="card">
-          <h2>About Me</h2>
-          <div class="inner-card">
-            <h3>About Me</h3>
-            <p>
-              I'm an aspiring IT and Cybersecurity professional with a strong background in healthcare administration and customer service. I completed the QuickStart Cybersecurity Bootcamp and am currently enrolled in the Per Scholas CompTIA A+ Training Program.
-            </p>
-            <p style="margin-top: 12px;">
-              I enjoy solving technical problems, learning new technologies, and building real-world experience to grow into cybersecurity.
-            </p>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2>Career Objective</h2>
-          <div class="inner-card">
-            <p>
-              Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer service experience, and passion for technology while continuing to grow professionally.
-            </p>
-          </div>
-        </section>
+    <!-- Metric Highlight Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">CompTIA A+</div>
+        <div class="stat-label">Per Scholas Training Program</div>
       </div>
+      <div class="stat-card">
+        <div class="stat-number">Cybersecurity</div>
+        <div class="stat-label">QuickStart Bootcamp Graduate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Healthcare Tech</div>
+        <div class="stat-label">HIPAA & Operations Expertise</div>
+      </div>
+    </div>
 
-      <!-- Column 2: Technical Skills -->
+    <!-- Main Dashboard Grid -->
+    <div class="dashboard-layout">
+
+      <!-- Left Column: Skills & Objectives -->
       <div>
-        <section class="card">
-          <h2>Technical Skills</h2>
-          <div class="skills-grid">
-            
-            <div class="skill-card">
+        
+        <!-- Technical Skills Card -->
+        <section class="section-card" id="skills">
+          <h2 class="section-title">Technical Expertise</h2>
+          <div class="skills-container">
+
+            <div class="skill-category">
               <h4>Operating Systems</h4>
-              <ul>
-                <li>Windows 10/11</li>
-                <li>Basic Linux</li>
-              </ul>
+              <div class="pill-group">
+                <span class="pill">Windows 10/11</span>
+                <span class="pill">Linux Fundamentals</span>
+                <span class="pill">Command Line Interface</span>
+              </div>
             </div>
 
-            <div class="skill-card">
-              <h4>Networking</h4>
-              <ul>
-                <li>TCP/IP & Subnetting</li>
-                <li>DNS & DHCP</li>
-                <li>Troubleshooting</li>
-              </ul>
+            <div class="skill-category">
+              <h4>Networking & Systems</h4>
+              <div class="pill-group">
+                <span class="pill">TCP/IP</span>
+                <span class="pill">DNS & DHCP</span>
+                <span class="pill">Subnetting</span>
+                <span class="pill">Network Diagnostics</span>
+              </div>
             </div>
 
-            <div class="skill-card">
-              <h4>Cybersecurity</h4>
-              <ul>
-                <li>Security Fundamentals</li>
-                <li>Risk Management</li>
-                <li>Vulnerability Assessment</li>
-              </ul>
+            <div class="skill-category">
+              <h4>Cybersecurity & Risk</h4>
+              <div class="pill-group">
+                <span class="pill">Security Fundamentals</span>
+                <span class="pill">Risk Management</span>
+                <span class="pill">Vulnerability Assessment</span>
+                <span class="pill">Threat Mitigation</span>
+              </div>
             </div>
 
-            <div class="skill-card">
-              <h4>Tools</h4>
-              <ul>
-                <li>Wireshark</li>
-                <li>VirtualBox & Kali</li>
-                <li>Git & GitHub</li>
-              </ul>
-            </div>
-
-            <div class="skill-card" style="grid-column: span 2;">
-              <h4>Hardware</h4>
-              <ul>
-                <li>PC Assembly & Peripheral Setup</li>
-                <li>Hardware Installation & Repair</li>
-              </ul>
+            <div class="skill-category">
+              <h4>Security Tools & Hardware</h4>
+              <div class="pill-group">
+                <span class="pill">Wireshark</span>
+                <span class="pill">VirtualBox</span>
+                <span class="pill">Kali Linux</span>
+                <span class="pill">Git / GitHub</span>
+                <span class="pill">PC Diagnostics & Assembly</span>
+              </div>
             </div>
 
           </div>
         </section>
+
+        <!-- Career Objective Card -->
+        <section class="section-card">
+          <h2 class="section-title">Career Objective</h2>
+          <p style="color: var(--text-sub); line-height: 1.7;">
+            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer-first service experience, and analytical mindset to resolve user issues and safeguard organizational infrastructure.
+          </p>
+        </section>
+
       </div>
 
-      <!-- Column 3: Professional Experience Timeline -->
+      <!-- Right Column: Timeline & Experience -->
       <div>
-        <section class="card">
-          <h2>Experience & Education</h2>
+
+        <!-- Education & Certification Timeline -->
+        <section class="section-card">
+          <h2 class="section-title">Education & Training</h2>
           <div class="timeline">
-            
-            <div class="timeline-item">
-              <h4>Per Scholas</h4>
-              <div class="date">CompTIA A+ • Current</div>
+
+            <div class="timeline-node">
+              <div class="node-title">CompTIA A+ Training Program</div>
+              <div class="node-meta">Per Scholas • Enrolled / Current</div>
+              <div class="node-desc">Comprehensive hands-on training in desktop OS, network configuration, hardware assembly, and user troubleshooting.</div>
             </div>
 
-            <div class="timeline-item">
-              <h4>QuickStart Bootcamp</h4>
-              <div class="date">Cybersecurity • Completed</div>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Healthcare Administration</h4>
-              <div class="date">Patient Support & Operations</div>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Technology Support</h4>
-              <div class="date">IMetric</div>
+            <div class="timeline-node">
+              <div class="node-title">Cybersecurity Bootcamp</div>
+              <div class="node-meta">QuickStart • Completed</div>
+              <div class="node-desc">Focus on core security concepts, offensive & defensive strategies, threat mitigation, and network assessment.</div>
             </div>
 
           </div>
         </section>
+
+        <!-- Experience Timeline -->
+        <section class="section-card" id="experience">
+          <h2 class="section-title">Professional Background</h2>
+          <div class="timeline">
+
+            <div class="timeline-node">
+              <div class="node-title">Technology Support</div>
+              <div class="node-meta">IMetric</div>
+              <div class="node-desc">Handled administrative technical workflows, tool integrations, and operational user support.</div>
+            </div>
+
+            <div class="timeline-node">
+              <div class="node-title">Healthcare Administration</div>
+              <div class="node-meta">Patient Operations & Support</div>
+              <div class="node-desc">Managed patient records, client support pipelines, and strict HIPAA compliance documentation.</div>
+            </div>
+
+          </div>
+        </section>
+
       </div>
 
     </div>
 
-    <footer>
-      <p>© 2026 Indya Regan</p>
+    <!-- Footer -->
+    <footer id="contact">
+      <p>© 2026 Indya Regan • Built for GitHub Pages</p>
     </footer>
 
   </div>
