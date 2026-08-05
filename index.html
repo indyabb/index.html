@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indya Regan | IT Support & Cybersecurity Professional</title>
+  <title>Indya Regan | IT & Cybersecurity Portfolio</title>
   
-  <!-- Premium Typography: Plus Jakarta Sans -->
+  <!-- Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* CSS Variables for Warm, Feminine & Professional Palette */
+    /* Warm, Chic & Professional Color Palette */
     :root {
       --bg-base: #0f0c13;          /* Obsidian Mulberry Base */
       --card-bg: #191421;          /* Glass Velvet Card */
       --card-border: #2e243a;      /* Soft Violet Border */
       
       --accent-rose: #f472b6;      /* Bright Rose Gold Accent */
-      --accent-mauve: #c084fc;     /* Soft Lavender/Lilac Glow */
+      --accent-mauve: #c084fc;     /* Soft Lavender Glow */
       --accent-amber: #fbbf24;     /* Warm Amber Accent */
       --accent-blush: #fbcfe8;     /* Warm Blush Text Highlight */
       
@@ -39,7 +39,6 @@
       color: var(--text-main);
       line-height: 1.6;
       padding: 40px 20px;
-      overflow-x: hidden;
     }
 
     .wrapper {
@@ -47,13 +46,13 @@
       margin: 0 auto;
     }
 
-    /* NAVIGATION BAR */
+    /* TOP NAVIGATION */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 16px 28px;
-      background: rgba(25, 20, 33, 0.8);
+      background: rgba(25, 20, 33, 0.85);
       backdrop-filter: blur(12px);
       border: 1px solid var(--card-border);
       border-radius: 100px;
@@ -63,7 +62,6 @@
     .nav-logo {
       font-weight: 800;
       font-size: 1.1rem;
-      letter-spacing: -0.5px;
       color: var(--text-main);
     }
 
@@ -95,16 +93,8 @@
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 30px;
-      position: relative;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    .hero-content {
-      max-width: 650px;
     }
 
     .status-pill {
@@ -134,7 +124,7 @@
       font-size: 3.2rem;
       font-weight: 800;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       background: linear-gradient(90deg, #ffffff, var(--accent-blush));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -142,7 +132,7 @@
 
     .hero-subtitle {
       color: var(--accent-rose);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -153,6 +143,7 @@
       color: var(--text-sub);
       font-size: 1.02rem;
       margin-bottom: 28px;
+      max-width: 780px;
       line-height: 1.7;
     }
 
@@ -186,15 +177,9 @@
       font-weight: 600;
       font-size: 0.92rem;
       text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--accent-rose);
-    }
-
-    /* KEY STATS BAR */
+    /* KEY HIGHLIGHT STATS */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -206,12 +191,12 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 20px 24px;
+      padding: 22px 24px;
       text-align: center;
     }
 
     .stat-number {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: var(--accent-amber);
     }
@@ -223,10 +208,10 @@
       margin-top: 4px;
     }
 
-    /* MAIN CONTENT DASHBOARD GRID */
+    /* DASHBOARD LAYOUT GRID */
     .dashboard-layout {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       gap: 30px;
     }
 
@@ -261,7 +246,7 @@
       border-radius: 4px;
     }
 
-    /* SKILLS CATEGORIES */
+    /* SKILL PILLS */
     .skills-container {
       display: flex;
       flex-direction: column;
@@ -269,7 +254,7 @@
     }
 
     .skill-category h4 {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--accent-amber);
@@ -352,18 +337,12 @@
       .dashboard-layout, .stats-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero-banner {
-        padding: 32px;
-      }
-
       .hero-title {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
       }
-
       nav {
         flex-direction: column;
-        gap: 16px;
+        gap: 14px;
         border-radius: 20px;
       }
     }
@@ -380,27 +359,25 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#education">Education</a></li>
       </ul>
     </nav>
 
     <!-- Hero Header Banner -->
     <section class="hero-banner" id="about">
-      <div class="hero-content">
-        <div class="status-pill">CompTIA A+ & Cybersecurity Specialist</div>
-        <h1 class="hero-title">Indya Regan</h1>
-        <p class="hero-subtitle">IT Support | Help Desk | Cybersecurity Professional</p>
-        <p class="hero-bio">
-          Combining extensive experience in healthcare administration and client support with rigorous cybersecurity training. Skilled in hardware diagnostics, network troubleshooting, and security risk assessment—dedicated to maintaining high system reliability and secure environments.
-        </p>
-        <div class="cta-group">
-          <a href="#contact" class="btn-primary">Get In Touch</a>
-          <a href="#skills" class="btn-secondary">View Qualifications</a>
-        </div>
+      <div class="status-pill">CompTIA A+ Candidate & Cybersecurity Specialist</div>
+      <h1 class="hero-title">Indya Regan</h1>
+      <p class="hero-subtitle">IT Support | Help Desk | Cybersecurity Professional</p>
+      <p class="hero-bio">
+        Passionate technology professional combining hands-on technical training with a strong background in healthcare administration and technical support. Currently building deep technical expertise through the <strong>Per Scholas CompTIA A+ Training Program</strong> and a graduate of the <strong>QuickStart Cybersecurity Bootcamp</strong>. Dedicated to delivering reliable technical troubleshooting, secure system environments, and exceptional user support.
+      </p>
+      <div class="cta-group">
+        <a href="#skills" class="btn-primary">Explore Qualifications</a>
+        <a href="#experience" class="btn-secondary">View Experience</a>
       </div>
     </section>
 
-    <!-- Metric Highlight Cards -->
+    <!-- Key Milestone Cards -->
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-number">CompTIA A+</div>
@@ -411,15 +388,15 @@
         <div class="stat-label">QuickStart Bootcamp Graduate</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">Healthcare Tech</div>
-        <div class="stat-label">HIPAA & Operations Expertise</div>
+        <div class="stat-number">Tech Support & Admin</div>
+        <div class="stat-label">iMetric & Healthcare Operations</div>
       </div>
     </div>
 
-    <!-- Main Dashboard Grid -->
+    <!-- Main Content Grid -->
     <div class="dashboard-layout">
 
-      <!-- Left Column: Skills & Objectives -->
+      <!-- LEFT COLUMN -->
       <div>
         
         <!-- Technical Skills Card -->
@@ -428,19 +405,22 @@
           <div class="skills-container">
 
             <div class="skill-category">
-              <h4>Operating Systems</h4>
+              <h4>Operating Systems & Hardware</h4>
               <div class="pill-group">
                 <span class="pill">Windows 10/11</span>
-                <span class="pill">Linux Fundamentals</span>
-                <span class="pill">Command Line Interface</span>
+                <span class="pill">Basic Linux</span>
+                <span class="pill">PC Assembly</span>
+                <span class="pill">Hardware Installation</span>
+                <span class="pill">Peripheral Setup</span>
               </div>
             </div>
 
             <div class="skill-category">
-              <h4>Networking & Systems</h4>
+              <h4>Networking & Infrastructure</h4>
               <div class="pill-group">
                 <span class="pill">TCP/IP</span>
-                <span class="pill">DNS & DHCP</span>
+                <span class="pill">DNS</span>
+                <span class="pill">DHCP</span>
                 <span class="pill">Subnetting</span>
                 <span class="pill">Network Diagnostics</span>
               </div>
@@ -452,72 +432,72 @@
                 <span class="pill">Security Fundamentals</span>
                 <span class="pill">Risk Management</span>
                 <span class="pill">Vulnerability Assessment</span>
-                <span class="pill">Threat Mitigation</span>
+                <span class="pill">Threat Awareness</span>
               </div>
             </div>
 
             <div class="skill-category">
-              <h4>Security Tools & Hardware</h4>
+              <h4>Technical Tools</h4>
               <div class="pill-group">
                 <span class="pill">Wireshark</span>
                 <span class="pill">VirtualBox</span>
                 <span class="pill">Kali Linux</span>
-                <span class="pill">Git / GitHub</span>
-                <span class="pill">PC Diagnostics & Assembly</span>
+                <span class="pill">Git & GitHub</span>
+                <span class="pill">Microsoft Office</span>
               </div>
             </div>
 
           </div>
         </section>
 
-        <!-- Career Objective Card -->
+        <!-- Career Objective -->
         <section class="section-card">
           <h2 class="section-title">Career Objective</h2>
           <p style="color: var(--text-sub); line-height: 1.7;">
-            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, customer-first service experience, and analytical mindset to resolve user issues and safeguard organizational infrastructure.
+            Seeking an entry-level Help Desk, IT Support, or Cybersecurity position where I can apply my technical training, healthcare customer service background, and analytical problem-solving skills while continuing to grow professionally within information technology and cybersecurity.
           </p>
         </section>
 
       </div>
 
-      <!-- Right Column: Timeline & Experience -->
+      <!-- RIGHT COLUMN -->
       <div>
 
-        <!-- Education & Certification Timeline -->
-        <section class="section-card">
-          <h2 class="section-title">Education & Training</h2>
+        <!-- Education & Training -->
+        <section class="section-card" id="education">
+          <h2 class="section-title">Education & Certifications</h2>
           <div class="timeline">
 
             <div class="timeline-node">
               <div class="node-title">CompTIA A+ Training Program</div>
-              <div class="node-meta">Per Scholas • Enrolled / Current</div>
-              <div class="node-desc">Comprehensive hands-on training in desktop OS, network configuration, hardware assembly, and user troubleshooting.</div>
+              <div class="node-meta">Per Scholas • Current / Enrolled</div>
+              <div class="node-desc">Developing hands-on skills with operating systems, computer hardware, networking architectures, troubleshooting methodologies, and IT fundamentals.</div>
             </div>
 
             <div class="timeline-node">
               <div class="node-title">Cybersecurity Bootcamp</div>
               <div class="node-meta">QuickStart • Completed</div>
-              <div class="node-desc">Focus on core security concepts, offensive & defensive strategies, threat mitigation, and network assessment.</div>
+              <div class="node-desc">Intensive training focused on core cybersecurity principles, network defense, threat analysis, risk management, and vulnerability assessment.</div>
             </div>
 
           </div>
         </section>
 
-        <!-- Experience Timeline -->
+        <!-- Professional Background -->
         <section class="section-card" id="experience">
           <h2 class="section-title">Professional Background</h2>
           <div class="timeline">
 
             <div class="timeline-node">
               <div class="node-title">Technology Support</div>
-              <div class="node-meta">IMetric</div>
-              <div class="node-desc">Handled administrative technical workflows, tool integrations, and operational user support.</div>
+              <div class="node-meta">iMetric</div>
+              <div class="node-desc">Gained hands-on technology support experience, assisting with technical workflows and operational platform support.</div>
             </div>
 
             <div class="timeline-node">
               <div class="node-title">Healthcare Administration</div>
-              <div class="node-meta">Patient Operations & Support</div>
-              <div class="node-desc">Managed patient records, client support pipelines, and strict HIPAA compliance documentation.</div>
+              <div class="node-meta">Patient Operations & Customer Support</div>
+              <div class="node-desc">Managed patient records, client communications, HIPAA compliance documentation, and daily administrative operations with high detail and confidentiality.</div>
             </div>
 
           </div>
@@ -528,7 +508,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
       <p>© 2026 Indya Regan • Built for GitHub Pages</p>
     </footer>
 
