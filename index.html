@@ -11,19 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Vibrant Pink Palette with Purple Accents */
+    /* Vibrant Shades of Pink with Subtle Hints of Purple */
     :root {
-      --bg-base: #130a17;          /* Dark Mulberry/Deep Plum Base */
-      --card-bg: #1f1224;          /* Rich Violet Card Background */
-      --card-border: #3b1d47;      /* Subtle Purple Card Border */
+      --bg-base: #120917;          /* Dark Plum Base */
+      --card-bg: #1e1126;          /* Deep Violet Card Background */
+      --card-border: #3c1e4a;      /* Soft Purple Card Border */
       
-      --accent-magenta: #ec4899;   /* Bright Hot Pink Accent */
-      --accent-rose: #f472b6;      /* Vibrant Rose Pink */
-      --accent-blush: #fbcfe8;     /* Soft Light Pink Highlight */
-      --accent-purple: #a855f7;    /* Subtle Electric Violet Accent */
+      --accent-magenta: #ec4899;   /* Hot Pink Accent */
+      --accent-rose: #f472b6;      /* Bright Rose Pink */
+      --accent-blush: #fbcfe8;     /* Light Pink Highlight */
+      --accent-purple: #a855f7;    /* Hint of Electric Violet */
       
-      --text-main: #ffffff;        /* High-contrast Crisp Text */
-      --text-sub: #d8b4fe;         /* Soft Light Lavender/Purple Text */
+      --text-main: #ffffff;        /* Crisp White Text */
+      --text-sub: #d8b4fe;         /* Soft Lavender/Purple Subtext */
       --badge-bg: rgba(236, 72, 153, 0.12);
     }
 
@@ -52,7 +52,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 28px;
-      background: rgba(31, 18, 36, 0.85);
+      background: rgba(30, 17, 38, 0.85);
       backdrop-filter: blur(12px);
       border: 1px solid var(--card-border);
       border-radius: 100px;
@@ -89,12 +89,29 @@
 
     /* HERO BANNER */
     .hero-banner {
-      background: linear-gradient(135deg, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(244, 114, 182, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.14) 50%, rgba(244, 114, 182, 0.08) 100%);
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 48px;
       margin-bottom: 30px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .profile-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-magenta);
+      box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+      flex-shrink: 0;
     }
 
     .status-pill {
@@ -342,6 +359,10 @@
       .dashboard-layout, .stats-grid {
         grid-template-columns: 1fr;
       }
+      .hero-flex {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
       .hero-title {
         font-size: 2.3rem;
       }
@@ -370,15 +391,24 @@
 
     <!-- Hero Header Banner -->
     <section class="hero-banner" id="about">
-      <div class="status-pill">CompTIA A+ Candidate & Cybersecurity Specialist</div>
-      <h1 class="hero-title">Indya Regan</h1>
-      <p class="hero-subtitle">IT Support | Help Desk | Cybersecurity Professional</p>
-      <p class="hero-bio">
-        Passionate technology professional combining hands-on technical training with a strong background in healthcare administration and technical support. Currently building deep technical expertise through the <strong>Per Scholas CompTIA A+ Training Program</strong> and a graduate of the <strong>QuickStart Cybersecurity Bootcamp</strong>. Dedicated to delivering reliable technical troubleshooting, secure system environments, and exceptional user support.
-      </p>
-      <div class="cta-group">
-        <a href="#skills" class="btn-primary">Explore Qualifications</a>
-        <a href="#experience" class="btn-secondary">View Experience</a>
+      <div class="hero-flex">
+        
+        <div class="hero-content">
+          <div class="status-pill">CompTIA A+ Candidate & Cybersecurity Specialist</div>
+          <h1 class="hero-title">Indya Regan</h1>
+          <p class="hero-subtitle">IT Support | Help Desk | Cybersecurity Professional</p>
+          <p class="hero-bio">
+            Passionate technology professional combining hands-on technical training with a strong background in healthcare administration and technical support. Currently building deep technical expertise through the <strong>Per Scholas CompTIA A+ Training Program</strong> and a graduate of the <strong>QuickStart Cybersecurity Bootcamp</strong>. Dedicated to delivering reliable technical troubleshooting, secure system environments, and exceptional user support.
+          </p>
+          <div class="cta-group">
+            <a href="#skills" class="btn-primary">Explore Qualifications</a>
+            <a href="#experience" class="btn-secondary">View Experience</a>
+          </div>
+        </div>
+
+        <!-- Headshot Image Placeholder (Ensure 'headshot.jpg' is uploaded to your GitHub repo) -->
+        <img src="headshot.jpg" alt="Indya Regan Headshot" class="profile-avatar">
+
       </div>
     </section>
 
