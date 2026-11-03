@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Indya Regan’s IT support and cybersecurity portfolio." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indya Regan’s IT support and cybersecurity portfolio.">
   <title>Indya Regan | IT Support &amp; Cybersecurity</title>
-
   <style>
     :root {
       --paper: #f8f7fc;
@@ -18,7 +17,6 @@
     }
 
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       background: var(--paper);
@@ -26,55 +24,32 @@
       font: 1rem/1.65 system-ui, sans-serif;
     }
 
-    .wrap {
-      width: min(68rem, calc(100% - 2rem));
-      margin-inline: auto;
-    }
-
-    header { border-bottom: 1px solid var(--line); }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .6rem 1.3rem;
-      padding-block: 1rem;
-    }
-
-    a {
-      display: inline-block;
-      color: var(--accent);
-      text-underline-offset: .22em;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #6559bc;
-      outline-offset: 5px;
-      box-shadow: var(--shadow);
-    }
-
-    nav a {
+    .wrap { width: min(68rem, calc(100% - 2rem)); margin-inline: auto; }
+    header, footer { border-block-end: 1px solid var(--line); }
+    nav { display: flex; flex-wrap: wrap; gap: .6rem; padding-block: 1rem; }
+    a { display: inline-block; color: var(--accent); text-underline-offset: .22em; }
+    a:focus-visible { outline: 3px solid #6559bc; outline-offset: 5px; }
+    nav a, .button {
+      padding: .5rem .85rem;
       border-radius: .55rem;
-      padding: .4rem .75rem;
       font-weight: 700;
       text-decoration: none;
     }
 
     nav a:hover, nav a:focus-visible { background: var(--tint); }
-
     body:has(#skills:target) nav a[href="#skills"],
     body:has(#projects:target) nav a[href="#projects"],
     body:has(#credentials:target) nav a[href="#credentials"],
     body:has(#training:target) nav a[href="#training"],
-    body:has(#pursuing:target) nav a[href="#pursuing"] {
-      background: var(--accent);
-      color: white;
-    }
+    body:has(#pursuing:target) nav a[href="#pursuing"],
+    .button { background: var(--accent); color: white; }
+    .button:hover { background: #332d77; }
 
     .hero {
       display: grid;
       grid-template-columns: 1fr 11rem;
-      gap: 2rem;
       align-items: center;
+      gap: 2rem;
       padding-block: 3.5rem;
     }
 
@@ -86,31 +61,13 @@
       text-transform: uppercase;
     }
 
-    h1, h2 {
-      margin: 0 0 .65rem;
-      font-family: Georgia, serif;
-      line-height: 1.08;
-    }
-
+    h1, h2 { margin: 0 0 .65rem; font-family: Georgia, serif; line-height: 1.08; }
     h1 { font-size: clamp(2.9rem, 8vw, 5.5rem); }
     h2 { font-size: clamp(1.8rem, 4vw, 2.55rem); }
     h3 { margin: 0 0 .3rem; line-height: 1.3; }
     p { margin: .45rem 0 1rem; }
     .intro { max-width: 58ch; color: var(--muted); }
-
-    .button {
-      padding: .65rem 1.15rem;
-      border-radius: .5rem;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .button:hover { background: #332d77; }
-
     .portrait {
-      width: 100%;
       aspect-ratio: 4 / 5;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -118,101 +75,52 @@
       background: var(--tint);
     }
 
-    .portrait img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    section {
-      padding-block: 2rem;
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 1rem;
-    }
-
+    .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    section { padding: 2rem 1rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
     section:target {
-      padding-inline: 1rem;
       border-radius: .75rem;
-      background: #eeebfa80;
-      box-shadow: inset 4px 0 var(--accent), 0 5px 0 var(--line),
-        0 16px 26px #332d7724;
+      background: var(--tint);
+      box-shadow: inset 4px 0 var(--accent), var(--shadow);
     }
 
     section:target h2 { color: var(--accent); }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tags li {
-      padding: .3rem .8rem;
-      border-radius: 2rem;
-      background: var(--tint);
-    }
-
-    .feature {
-      padding: clamp(1rem, 3vw, 2rem);
-      border-radius: 1rem;
-      background: var(--tint);
-    }
-
+    .tags { display: flex; flex-wrap: wrap; gap: .55rem; padding: 0; list-style: none; }
+    .tags li { padding: .3rem .8rem; border-radius: 2rem; background: var(--tint); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
     .feature + .grid { margin-top: 1.25rem; }
+    .feature, .grid article {
+      padding: clamp(1rem, 3vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--paper);
+    }
+
     .feature ul { margin-bottom: 0; padding-left: 1.25rem; }
     .feature li + li { margin-top: .45rem; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .grid article:not(.feature) {
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: .85rem;
-    }
-
-    footer {
-      padding-block: 1.2rem;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-    }
+    footer { padding-block: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); }
 
     @media (hover: hover) {
-      a:hover, .feature:hover, .grid article:hover,
-      .tags li:hover, .portrait:hover {
-        box-shadow: var(--shadow);
-      }
+      a:hover, article:hover, .tags li:hover, .portrait:hover { box-shadow: var(--shadow); }
     }
-
-    a:active { box-shadow: 0 1px 0 var(--line); }
 
     @media (prefers-reduced-motion: no-preference) {
       html { scroll-behavior: smooth; }
-
-      a, .feature, .grid article, .tags li, .portrait {
-        transition: transform .24s ease, box-shadow .24s ease,
-          background-color .24s ease;
+      a, article, .tags li, .portrait {
+        transition: transform .24s ease, box-shadow .24s ease, background-color .24s ease;
       }
 
       @media (hover: hover) {
-        a:hover, .feature:hover, .grid article:hover,
-        .tags li:hover, .portrait:hover {
+        a:hover, article:hover, .tags li:hover, .portrait:hover {
           transform: perspective(850px) translateY(-5px) rotateX(5deg);
         }
       }
 
-      a:active { transform: translateY(2px); }
+      a:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--line); }
       section:target { animation: section-arrive .45s ease-out; }
 
       @keyframes section-arrive {
         from { transform: perspective(1000px) translateY(10px) rotateX(5deg); }
-        to { transform: perspective(1000px) translateY(0) rotateX(0); }
+        to { transform: none; }
       }
     }
 
@@ -223,7 +131,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav class="wrap" aria-label="Portfolio sections">
@@ -240,17 +147,11 @@
       <div>
         <p class="eyebrow">IT Support · Cybersecurity</p>
         <h1>Indya Regan</h1>
-        <p class="intro">
-          Welcome to my professional portfolio. I bring more than 600 hours
-          of hands-on IT training in Windows troubleshooting, endpoint
-          security, networking, and help desk support. My healthcare experience
-          shapes how I approach technical support: I listen carefully,
-          communicate clearly, and help people get back to work.
-        </p>
+        <p class="intro">Welcome to my professional portfolio. I bring more than 600 hours of hands-on IT training in Windows troubleshooting, endpoint security, networking, and help desk support. My healthcare experience shapes how I approach technical support: I listen carefully, communicate clearly, and help people get back to work.</p>
         <a class="button" href="mailto:Indyabregan@gmail.com">Contact Me</a>
       </div>
       <div class="portrait">
-        <img src="profile.jpg" alt="Portrait of Indya Regan" />
+        <img alt="Portrait of Indya Regan" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCABzAE4DASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAgADBAUGAf/EACsQAAICAQMDBAICAgMAAAAAAAECAAMRBBIhBTFBEyJRcWGRQqEzNFJygf/EABkBAAMBAQEAAAAAAAAAAAAAAAADBAECBf/EAB8RAQEAAgMAAgMAAAAAAAAAAAABAhEDITEEEhNCUf/aAAwDAQACEQMRAD8AqhOxRT1S3Yoo3delIy55PYeTC2Tug5FK9+osThFA+50a+wH3V5H4ifz4N1U+cMGm1bk3L+viHHS77jAGNtHTG2gDonYAMIGAcusFVTO3YCU1jtYTbZkljwPiSup3ZZKR9mNbdqgMMgn9GRfIz3dfx3jFl03p4sAdl+hJ+o6WlteCuD4IjnTbKgioHG7HYjEsLrUUbMFnPYASDu3auSSaZHUae3R27kJGO/wZMqsFtYYeZL6km+twUKsBmVXTrvU3qfEt+LyXeqn5MdVMIjbR0xtpeSBGzHN2FJPiRam5h6lsaZ/yMTm5am2qprDbqDY3k/1JWmey/UbKiAxPBMhum0DHgZMkdKs9PXIZ5mVurTMfY0SU3U1K1tm593H1J+o0zamrCuUb5Eg23Pfq0qQOLFA4C5Es7hdTTvursHGM7exk/fqrrWkNtI2npb1LGsJH8pQaq5NN1ErXgIoVePrn+5f6rUu+nLWLtIBmNuLPczNyScxnFe9wvl8kaHIIyI20b0dotoGDyODDeexLubSIKHEZ1Wp3nYDwvf7nXfZWT5kMH3c9vMk5c9T6x3D6AjlgdrjEaDNTcCO6mPG3ZWa2GR4jDAFsqc/cma0/TLzq7UsWwpag2n8iXdocqLL7t4XsOwmR0i1lBYupWlx+cGXWmp9akPZq/UT5JwIi9KsbtB61riAqIPa5P/uJU28oSRgyX16yt9Qi0MHVFwSO2cyBcwAYeWwRG4TUIzu6c6feKryrcK/9GWTmU1JCk8jHxiWGnu9RMHuss4M/1pViNpqH1t/pgnaO5hdU0yaV0RMHjnEueiacJp/UYYLcyq65g6vAIwBI7lcszvrrFDt9yV474grWRz5jrAitMjxO4nRYccjHaHn9YgjgwlGP3AEw3DBkZyc4PcDElmMXJk7hAGwhIyslaezA22sUx2JEjIMEjkYh2MWA3DIHYzZbO4GlTNemA5xjxM/qgbddZn57TTOcab21s5+BMzrldNS+QVL+DE4encnhtAckscmHBHEIRpLuIlz5OeYolz5+YAUFhkQpxuxgEd8bhjv5hFylKhcZJyYkYCvPk8HE4yD0wc9zAN9pkCoJjOsWC3qtxHYHAmz3bKGP4mD1TZ1dhP8AyisPTuTx1YYEFIcaSXkTi89/BiMQORxACinIoAw/s9vgnMTAgZz7YVoBnKK9+ckAfJOIBvLf8DfUweq/2rP+0UUVx+ncngk7Q4oo0koPbOIooAY7RRRQACAzjMKtR6J4/lFFMvjrH1//2Q==">
       </div>
     </div>
 
